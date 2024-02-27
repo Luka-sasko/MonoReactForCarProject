@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import CarFormHome from './components/Home/CarFormHome.js';
 import CarShowHome from './components/Home/CarShowHome.js';
-import Update from './components/Update/Update.js';
+//import Update from './components/Update/Update.js';
+import UpdateClass from './UpdateClass.js';
 
 function Home() {
   const [selectedCarIndex, setSelectedCarIndex] = useState(null);
@@ -93,7 +94,9 @@ function Home() {
     <>
       <CarShowHome cars={cars} deleteCar={deleteCar} updateCar={updateCar} showAllCars={showAllCars} hideAllCars={hideAllCars} />
       <CarFormHome car={car} handleInputChange={handleInputChange} addCar={addCar} />
-      {flagUpdate && <Update updateSelectedCar={updateSelectedCar}/>} 
+      {/* {flagUpdate && <Update updateSelectedCar={updateSelectedCar}/>} */}
+      {flagUpdate && <UpdateClass updateCar={updateSelectedCar}/>} 
+
     </>
   );
 }
